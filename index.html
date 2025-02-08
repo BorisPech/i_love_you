@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Boris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <button class="btn" onclick="evenOn()">Click Me</button>
+        </div>
+        <div class="result">
+            <div id="showResult"></div>
+            <div id="showText"></div>
+        </div>
+    </div>
+
+    <script>
+        let getResult = document.querySelector("#showResult");
+        let showText = document.querySelector("#showText");
+        let message = " 💚 I Love You 🧡";
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function evenOn() {
+            getResult.innerHTML = "🧡";
+            showText.innerHTML = "";
+
+            for (let i = 0; i < 1000; i++) {
+                let x = i + 1;
+                if (x < 10) {
+                    showText.innerHTML += "0" + x;
+                    for (let text of message) {
+                        showText.innerHTML += text;
+                        if(i < 5){
+                            await delay(100);
+                        }else {
+                            await delay(50);
+                        }
+                    }
+                    showText.innerHTML += "<br>";
+                } else {
+                    showText.innerHTML += x;
+                    for (let text of message) {
+                        showText.innerHTML += text;
+                        if (i < 30){
+                            await delay(25);
+                        }else {
+                            await delay(20);
+                        }
+                    }
+                    showText.innerHTML += "<br>";
+                }
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

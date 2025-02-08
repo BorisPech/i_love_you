@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Dangrek", serif;
+}
+
+.container {
+    min-width: 300px;
+    margin: 50px auto;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #7C2AE8;
+    background-color: #7C2AE8;
+    animation-name: btn-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transition: background-color 0.3s ease;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn:hover {
+    scale: 1.1;
+}
+
+@keyframes btn-animation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.result {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#showResult {
+    font-size: 200px;
+}
+
+#showText {
+    font-size: 30px;
+    margin-bottom: 10vh;
+}
